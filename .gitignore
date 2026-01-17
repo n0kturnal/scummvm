@@ -305,3 +305,4 @@ scummvm.prg
 
 #Ignore Python generated files
 __pycache__/
+backends/platform/atari/deps
