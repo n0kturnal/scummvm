@@ -160,6 +160,7 @@ _flac=auto
 _mad=auto
 _opl2lpt=no
 _retrowave=auto
+_fmlib=no
 _alsa=auto
 _seq_midi=auto
 _sndio=auto
@@ -1147,6 +1148,9 @@ Optional Libraries:
   --with-retrowave-prefix=DIR prefix where libretrowave is installed (optional)
   --enable-retrowave          enable RetroWave OPL3 support
 
+  --with-fmlib-prefix=DIR  prefix where libfm is installed (optional)
+  --enable-fmlib           enable OPL2/3 support via fmlib
+
   --with-sparkle-prefix=DIR prefix where sparkle is installed
                             (macOS/Windows only - optional)
   --disable-sparkle         disable sparkle automatic update support
@@ -1285,6 +1289,8 @@ for ac_option in $@; do
 	--disable-opl2lpt)            _opl2lpt=no            ;;
 	--enable-retrowave)           _retrowave=yes         ;;
 	--disable-retrowave)          _retrowave=no          ;;
+	--enable-fmlib)               _fmlib=yes             ;;
+	--disable-fmlib)              _fmlib=no              ;;
 	--enable-flac)                _flac=yes              ;;
 	--disable-flac)               _flac=no               ;;
 	--enable-mad)                 _mad=yes               ;;
@@ -1468,6 +1474,11 @@ for ac_option in $@; do
 		arg=`echo $ac_option | cut -d '=' -f 2`
 		RETROWAVE_CFLAGS="-I$arg/include"
 		RETROWAVE_LIBS="-L$arg/lib"
+		;;
+	--with-fmlib-prefix=*)
+		arg=`echo $ac_option | cut -d '=' -f 2`
+		FMLIB_CFLAGS="-I$arg/include"
+		FMLIB_LIBS="-L$arg/lib/aout/stdlib/Final/020-60"
 		;;
 	--with-flac-prefix=*)
 		arg=`echo $ac_option | cut -d '=' -f 2`
@@ -3842,7 +3853,9 @@ if test -n "$_host"; then
 			#	# --disable-debug
 			#	append_var LDFLAGS "-s"
 			#fi
-
+			
+			append_var DEFINES "-DDISABLE_DOSBOX_OPL"
+			
 			# auto -> no
 			if test "$_optimizations" = "yes"; then
 				# --enable-release, --enable-optimizations
@@ -4204,6 +4217,7 @@ case $_backend in
 		append_var DEFINES "-DDISABLE_NES_APU"
 		#append_var DEFINES "-DDISABLE_DOSBOX_OPL"
 		append_var LIBS "-lgem"
+		_fmlib=yes
 		_ogg=no
 		_vorbis=no
 		_tremor=no
@@ -5504,6 +5518,65 @@ fi
 define_in_config_if_yes "$_retrowave" 'USE_RETROWAVE'
 echo "$_retrowave"
 
+#
+# Check for fmlib OPL2/3 library
+#
+echocheck "fmlib OPL2 / OPL3"
+if test "$_fmlib" = auto ; then
+	_fmlib=no
+	cat > $TMPC << EOF
+
+#include "fm/fm_defs.h"
+#include "fmcore.h"
+#include "fmutil.h"
+
+sOplInterface gOplIf;
+
+int main(void)
+{ 
+	sOplInterfaceConfiguration ifCfg =
+	{
+		.deviceType = FMD_UNDEFINED,
+        .operationMode = OPMODE_OPL2,
+        .oplSetup = OPSETUP_UNDEFINED
+    };
+
+    sInterfaceInitData params;
+	params.uParam.outputPort = OPT_ST_CART;
+    params.uParam.param = 0;
+
+    ifCfg = (sOplInterfaceConfiguration)
+    {
+    	.deviceType = FMD_OPLCART,
+        .operationMode = CM_OPL3,
+        .oplSetup = CC_SINGLE
+    };
+
+   gOplIf = fmCreateInterface(ifCfg); 
+
+   int32_t retval = fmInit(&gOplIf, &params); 
+   const bool isOk = (retval >= 0);
+
+   if(isOK)
+   {
+	
+	(void)fmDeinit(&gOplIf, &params);
+    return 0;
+   }	
+
+  return -1;
+ }
+EOF
+	cc_check $FMLIB_CFLAGS $FMLIB_LIBS -lfmCore -lfmUtil -loplCommon -lnokturnfmDriver -lopl3DuoDriver -lopl3ExpressDriver -loplxlptDriver -lsystemCore && \
+	_fmlib=yes
+fi
+if test "$_fmlib" = yes; then
+	append_var DEFINES "-DFMLIB_OPL_SHADOW_REG_WRITE_ENABLE=1 -DFMLIB_ENABLE_DRIVER_NOKTURNFM=1 -DFMLIB_ENABLE_DRIVER_RW_OPL3_EXPRESS=1 -DFMLIB_ENABLE_DRIVER_OPLXLPT=1 -DFMLIB_ENABLE_DRIVER_OPL3DUO=1 -DCORE_ENABLE_MALLOC=0"
+	append_var LIBS "$FMLIB_LIBS -lfmCore -lfmUtil -loplCommon -lnokturnfmDriver -lopl3DuoDriver -lopl3ExpressDriver -loplxlptDriver -lsystemCore"
+	append_var INCLUDES "$FMLIB_CFLAGS"
+fi
+define_in_config_if_yes "$_fmlib" 'USE_FMLIB'
+echo "$_fmlib"
 #
 # Check for FLAC
 #

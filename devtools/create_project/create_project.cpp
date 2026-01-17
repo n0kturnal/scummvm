@@ -1186,6 +1186,7 @@ const Feature s_features[] = {
 	{    "sdlnet",     "USE_SDL_NET", true, true,  "SDL_net support" },
 	{   "discord",     "USE_DISCORD", true, false, "Discord support" },
 	{ "retrowave",   "USE_RETROWAVE", true, false, "RetroWave OPL3 support" },
+	{     "FMlib",   	 "USE_FMLIB", true, false, "Nokturnal FMlib OPL2/OPL3 support" },
 	{       "a52",         "USE_A52", true, false, "ATSC A/52 support" },
 	{       "mpc",      "USE_MPCDEC", true, false, "Musepack support" },
 

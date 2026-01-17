@@ -121,6 +121,11 @@ MODULE_OBJS += \
 	rwopl3.o
 endif
 
+ifdef USE_FMLIB
+MODULE_OBJS += \
+	fmlibopl.o
+endif
+	
 ifdef USE_VGMTRANS_AUDIO
 MODULE_OBJS += \
 	soundfont/rawfile.o \

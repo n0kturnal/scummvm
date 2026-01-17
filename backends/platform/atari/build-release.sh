@@ -35,7 +35,8 @@ then
 	--host=${PLATFORM} \
 	--enable-release \
 	--enable-verbose-build \
-	--disable-engine=hugo,director,cine,ultima
+	--disable-engine=hugo,director,cine,ultima \
+	--with-fmlib-prefix=../backends/platform/atari/deps/libfm
 fi
 
 make -j$(getconf _NPROCESSORS_CONF) atarifulldist

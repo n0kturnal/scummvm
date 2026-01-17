@@ -24,6 +24,11 @@
 #ifdef USE_RETROWAVE
 #include "audio/rwopl3.h"
 #endif
+
+#ifdef USE_FMLIB
+#include "audio/fmlibopl.h"
+#endif
+
 #include "audio/softsynth/opl/dosbox.h"
 #include "audio/softsynth/opl/mame.h"
 #include "audio/softsynth/opl/nuked.h"
@@ -54,6 +59,12 @@ namespace RetroWaveOPL3 {
 } // End of namespace RetroWaveOPL3
 #endif // ENABLE_RETROWAVE_OPL3
 
+#ifdef USE_FMLIB
+namespace FMlibOPL {
+	OPL *create(Config::OplType type, enum FMlibOPL::OplDevice dt);
+} // End of namespace FMlibOPL
+#endif
+
 // Config implementation
 
 enum OplEmulator {
@@ -64,7 +75,16 @@ enum OplEmulator {
 	kNuked = 4,
 	kOPL2LPT = 5,
 	kOPL3LPT = 6,
-	kRWOPL3 = 7
+	kRWOPL3 = 7,
+#ifdef USE_FMLIB
+	kFMlibNokturnFM2 = 8,
+	kFMlibNokturnFM3 = 9,
+	kFMlibRWOpl3Express = 10,
+	kFMlibOPL2LPT = 11,
+	kFMlibOPL3LPT = 12,
+	kFMlibCEOPL2AudioBoard = 13,
+	kFMlibCEOPL3Duo = 14
+#endif	
 };
 
 OPL::OPL() {
@@ -96,6 +116,15 @@ const Config::EmulatorDescription Config::_drivers[] = {
 #ifdef USE_RETROWAVE
 	{"rwopl3", _s("RetroWave OPL3"), kRWOPL3, kFlagOpl2 | kFlagDualOpl2 | kFlagOpl3},
 #endif
+#ifdef USE_FMLIB
+	{"fmlib_nokturnfm2", _s("NokturnFM2 (OPL2)"), kFMlibNokturnFM2, kFlagOpl2 },
+	{"fmlib_nokturnfm3", _s("NokturnFM3 (OPL3)"), kFMlibNokturnFM3, kFlagOpl2 | kFlagDualOpl2 | kFlagOpl3},
+	{"fmlib_rwopl3", _s("RetroWave USB OPL3 Express (OPL3)"), kFMlibRWOpl3Express, kFlagOpl2 | kFlagDualOpl2 | kFlagOpl3},
+	{"fmlib_opl2lpt", _s("Serdaco OPL2LPT (OPL2)"), kFMlibOPL2LPT, kFlagOpl2 },
+	{"fmlib_opl3lpt", _s("Serdaco OPL3LPT (OPL3)"), kFMlibOPL3LPT, kFlagOpl2 | kFlagDualOpl2 | kFlagOpl3},
+	{"fmlib_ce_opl2ab", _s("Cheerful Electronics OPL2 Audio Board (OPL2)"), kFMlibCEOPL2AudioBoard, kFlagOpl2 },
+	{"fmlib_ce_opl3duo", _s("Cheerful Electronics OPL3 Duo! (2xOPL3)"), kFMlibCEOPL3Duo, kFlagOpl2 | kFlagDualOpl2 | kFlagOpl3},
+#endif	
 	{ nullptr, nullptr, 0, 0 }
 };
 
@@ -228,7 +257,7 @@ OPL *Config::create(DriverId driver, OplType type) {
 		}
 
 		warning("OPL2LPT only supprts OPL2");
-		return 0;
+		return nullptr;
 	case kOPL3LPT:
 		return OPL2LPT::create(type);
 #endif
@@ -236,6 +265,51 @@ OPL *Config::create(DriverId driver, OplType type) {
 #ifdef USE_RETROWAVE
 	case kRWOPL3:
 		return RetroWaveOPL3::create(type);
+#endif
+
+#ifdef USE_FMLIB
+	case kFMlibNokturnFM2:
+	{
+		if (type == kOpl2)
+		{
+			return FMlibOPL::create(type, FMlibOPL::dtNokturnFM2);
+		}
+		warning("NokturnFM2 supports only OPL2");
+		return nullptr;
+	};
+
+	case kFMlibNokturnFM3:
+		return FMlibOPL::create(type, FMlibOPL::dtNokturnFM3);
+	
+	case kFMlibRWOpl3Express:
+		return FMlibOPL::create(type, FMlibOPL::dtRWOpl3Express);
+
+	case kFMlibOPL2LPT:
+	{
+		if (type == kOpl2)
+		{
+			return FMlibOPL::create(type, FMlibOPL::dtOPL2LPT);
+		}
+		warning("OPL2LPT supports only OPL2");
+		return nullptr;
+	};
+
+	case kFMlibOPL3LPT:
+		return FMlibOPL::create(type, FMlibOPL::dtOPL3LPT); 
+
+	case kFMlibCEOPL2AudioBoard:
+	{
+		if (type == kOpl2)
+		{
+			return FMlibOPL::create(type, FMlibOPL::dtOPL2AudioBoard);
+		}
+	
+		warning("OPL2 Audio Board supports only OPL2");
+		return nullptr;
+	};
+
+	case kFMlibCEOPL3Duo:
+		return FMlibOPL::create(type, FMlibOPL::dtOPL3Duo);
 #endif
 
 	default:
