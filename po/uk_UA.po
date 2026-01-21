@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ScummVM 1.9.0git\n"
 "Report-Msgid-Bugs-To: scummvm-devel@lists.scummvm.org\n"
-"POT-Creation-Date: 2026-01-17 20:38+0000\n"
-"PO-Revision-Date: 2026-01-17 17:38+0000\n"
+"POT-Creation-Date: 2026-01-20 23:50+0000\n"
+"PO-Revision-Date: 2026-01-20 00:41+0000\n"
 "Last-Translator: Eugene Sandulenko <sev@scummvm.org>\n"
 "Language-Team: Ukrainian <https://translations.scummvm.org/projects/scummvm/"
 "scummvm/uk/>\n"
@@ -1662,12 +1662,12 @@ msgid "Unknown Year"
 msgstr "Рік невідомий"
 
 #: gui/launcher.cpp:1434 gui/launcher.cpp:1810
-#, fuzzy
-#| msgid "Do you really want to remove this game configuration?"
 msgid ""
 "Do you really want to remove the following game configurations?\n"
 "\n"
-msgstr "Ви дійсно хочете видалити налаштування для цієї гри?"
+msgstr ""
+"Ви дійсно хочете видалити налаштування для цієї гри?\n"
+"\n"
 
 #. I18N: Group for All items
 #: gui/launcher.cpp:1615 gui/widgets/groupedlist.cpp:81
@@ -4116,11 +4116,11 @@ msgstr "Налаштовую емулятор MT-32"
 msgid "MT-32 emulator"
 msgstr "Емулятор MT-32"
 
-#: audio/softsynth/pcspk.cpp:254
+#: audio/softsynth/pcspk.cpp:250
 msgid "PC Speaker emulator"
 msgstr "Емулятор PC спікера"
 
-#: audio/softsynth/pcspk.cpp:273
+#: audio/softsynth/pcspk.cpp:269
 msgid "IBM PCjr emulator"
 msgstr "Емулятор IBM PCjr"
 
@@ -7722,14 +7722,16 @@ msgstr "База даних доказів"
 #. In Blade Runner's official localizations, there is a description of this keymap
 #. on the KIA Help Page, under Keyboard Shortcuts. In the English version it is
 #. QUIT GAME
-#: engines/bladerunner/metaengine.cpp:375 engines/darkseed/metaengine.cpp:60
-#: engines/dragons/metaengine.cpp:223 engines/efh/metaengine.cpp:373
-#: engines/efh/metaengine.cpp:619 engines/freescape/games/castle/castle.cpp:273
+#: engines/bladerunner/metaengine.cpp:375 engines/cruise/metaengine.cpp:229
+#: engines/darkseed/metaengine.cpp:60 engines/dragons/metaengine.cpp:223
+#: engines/efh/metaengine.cpp:373 engines/efh/metaengine.cpp:619
+#: engines/freescape/games/castle/castle.cpp:273
 #: engines/freescape/games/dark/dark.cpp:197
 #: engines/freescape/games/driller/driller.cpp:130
 #: engines/freescape/games/eclipse/eclipse.cpp:237
-#: engines/saga/metaengine.cpp:437 engines/sherlock/metaengine.cpp:359
-#: engines/sherlock/metaengine.cpp:618 engines/sherlock/metaengine.cpp:852
+#: engines/mads/metaengine.cpp:361 engines/saga/metaengine.cpp:437
+#: engines/sherlock/metaengine.cpp:359 engines/sherlock/metaengine.cpp:618
+#: engines/sherlock/metaengine.cpp:852 engines/stark/metaengine.cpp:280
 #: engines/sword1/metaengine.cpp:295 engines/trecision/metaengine.cpp:156
 #: engines/tsage/metaengine.cpp:231 engines/vcruise/metaengine.cpp:190
 msgid "Quit game"
@@ -8060,7 +8062,7 @@ msgstr "Вийти з заставки Sony"
 msgid "Select option / Click in game"
 msgstr "Вибрати опцію / Клацнути у грі"
 
-#: engines/cine/metaengine.cpp:302
+#: engines/cine/metaengine.cpp:302 engines/sherlock/metaengine.cpp:799
 msgid "Open action menu / Close menu"
 msgstr "Відкрити меню дій / Закрити меню"
 
@@ -8169,7 +8171,10 @@ msgid "Reply 6"
 msgstr "Відповідь 6"
 
 #. I18N: (Game: The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel) The game has an inventory, this action is go ahead a page (one page displays 6 items) in the inventory
+#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go forward 1 page in the journal
+#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has multiple widgets for various purposes (eg. inventory, save files, etc.), this action is used to scroll down by a page in the widget
 #: engines/crab/input/input.cpp:221 engines/sherlock/metaengine.cpp:591
+#: engines/sherlock/metaengine.cpp:902 engines/sherlock/metaengine.cpp:1048
 #: engines/twine/metaengine.cpp:460 engines/wintermute/keymapper_tables.h:190
 #: engines/wintermute/keymapper_tables.h:207
 #: engines/wintermute/keymapper_tables.h:638
@@ -8181,7 +8186,10 @@ msgid "Next page"
 msgstr "Наступна сторінка"
 
 #. I18N: (Game: The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel) The game has an inventory, this action is go back a page (one page displays 6 items) in the inventory
+#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go back 1 page in the journal
+#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has multiple widgets for various purposes (eg. inventory, save files, etc.), this action is used to scroll up by a page in the widget
 #: engines/crab/input/input.cpp:226 engines/sherlock/metaengine.cpp:572
+#: engines/sherlock/metaengine.cpp:917 engines/sherlock/metaengine.cpp:1041
 #: engines/wintermute/keymapper_tables.h:183
 #: engines/wintermute/keymapper_tables.h:199
 #: engines/wintermute/keymapper_tables.h:630
@@ -8221,11 +8229,6 @@ msgstr "Підвищити швидкість гри"
 #: engines/cruise/metaengine.cpp:211
 msgid "Decrease game speed"
 msgstr "Сповільнити швидкість гри"
-
-#: engines/cruise/metaengine.cpp:229 engines/mads/metaengine.cpp:361
-#: engines/stark/metaengine.cpp:280
-msgid "Exit game"
-msgstr "Вийти з гри"
 
 #: engines/cryomni3d/metaengine.cpp:143
 msgid "Versailles 1685 support is not compiled in"
@@ -9508,10 +9511,8 @@ msgid "Glowstick"
 msgstr "Сяюча паличка"
 
 #: engines/hugo/metaengine.cpp:45
-#, fuzzy
-#| msgid "Easy mouse interface"
 msgid "Use Windows interface"
-msgstr "Простий інтерфейс для миші"
+msgstr "Використовувати інтерфейс Windows"
 
 #: engines/hugo/metaengine.cpp:46
 msgid "Use mouse and toolbar from Windows version"
@@ -9650,8 +9651,9 @@ msgid "Secondary shoot"
 msgstr "Второрядний постріл"
 
 #: engines/hypno/metaengine.cpp:146 engines/lab/metaengine.cpp:209
-#: engines/ngi/metaengine.cpp:168 engines/teenagent/metaengine.cpp:232
-#: engines/toon/metaengine.cpp:98 engines/voyeur/metaengine.cpp:235
+#: engines/ngi/metaengine.cpp:168 engines/sherlock/metaengine.cpp:872
+#: engines/teenagent/metaengine.cpp:232 engines/toon/metaengine.cpp:98
+#: engines/voyeur/metaengine.cpp:235
 msgid "Skip intro"
 msgstr "Пропустити вступ"
 
@@ -11376,7 +11378,7 @@ msgstr "Показувати SFX субтитри"
 
 #: engines/private/metaengine.cpp:40
 msgid "Use SFX subtitles (if subtitles are enabled)."
-msgstr "Показувати субтитри для SFX (якщо cубтитри було увіменено)"
+msgstr "Показувати субтитри для SFX (якщо cубтитри було увіменено)."
 
 #: engines/private/metaengine.cpp:50
 msgid "Highlight decision areas"
@@ -13333,18 +13335,19 @@ msgid "Go back 10 pages"
 msgstr ""
 
 #. I18N: (Game: The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel) The game has a journal, this action is used to go forward 10 pages in the journal
-#: engines/sherlock/metaengine.cpp:507
-msgid "Go ahead 10 pages"
-msgstr ""
+#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go forward 10 pages in the journal
+#: engines/sherlock/metaengine.cpp:507 engines/sherlock/metaengine.cpp:895
+msgid "Go forward 10 pages"
+msgstr "10 сторінок вперед"
 
 #. I18N: (Game: The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel) The game has a journal, this action is used to go to the first page of the journal
-#: engines/sherlock/metaengine.cpp:521
+#: engines/sherlock/metaengine.cpp:521 engines/sherlock/metaengine.cpp:924
 #: engines/wintermute/keymapper_tables.h:965
 msgid "First page"
 msgstr "Перша сторінка"
 
 #. I18N: (Game: The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel) The game has a journal, this action is used to go to the last page of the journal
-#: engines/sherlock/metaengine.cpp:528
+#: engines/sherlock/metaengine.cpp:528 engines/sherlock/metaengine.cpp:931
 #: engines/wintermute/keymapper_tables.h:970
 msgid "Last page"
 msgstr "Остання сторінка"
@@ -13410,89 +13413,53 @@ msgid "Journal search keymappings"
 msgstr "Мапа клавіш пошуку у журналі"
 
 #: engines/sherlock/metaengine.cpp:783
-#, fuzzy
-#| msgid "Game keymappings"
 msgid "Menu scrolling keymappings"
-msgstr "Мапа клавіш гри"
+msgstr "Мапа клавіш прокрутки меню"
 
 #: engines/sherlock/metaengine.cpp:784
-#, fuzzy
-#| msgid "Save/Load keymappings"
 msgid "save / load menu keymappings"
-msgstr "Зберегти/Прочитати мапи клавіш гри"
+msgstr "Мапв клавіш меню збережкння / завантаження"
 
 #: engines/sherlock/metaengine.cpp:785
-#, fuzzy
-#| msgid "Game keymappings"
 msgid "Save files name editing keymappings"
-msgstr "Мапа клавіш гри"
+msgstr "Мапа клавіш редагування назв збережень"
 
 #: engines/sherlock/metaengine.cpp:786
-#, fuzzy
-#| msgid "Escape keymappings"
 msgid "Foolscap puzzle keymappings"
-msgstr "Мапа клавіш ESC"
+msgstr "Мапа клавіш у головоломці Foolscap"
 
 #: engines/sherlock/metaengine.cpp:788
-#, fuzzy
-#| msgid "Game keymappings"
 msgid "Options menu keymappings"
-msgstr "Мапа клавіш гри"
+msgstr "Мапа клавіш меню налаштувань"
 
 #: engines/sherlock/metaengine.cpp:789
-#, fuzzy
-#| msgid "Game keymappings"
 msgid "Password entry keymappings"
-msgstr "Мапа клавіш гри"
+msgstr "Мапа клавіш вводу паролю"
 
 #: engines/sherlock/metaengine.cpp:791
-#, fuzzy
-#| msgid "Index keymappings"
 msgid "Talk options keymappings"
-msgstr "Мапи клавіш"
+msgstr "Мапа клавіш опцій розмови"
 
 #: engines/sherlock/metaengine.cpp:793
-#, fuzzy
-#| msgid "Move left"
 msgid "Move / Examine / Select"
-msgstr "Рухатись наліво"
-
-#: engines/sherlock/metaengine.cpp:799
-#, fuzzy
-#| msgid "Open action menu / Close menu"
-msgid "Open verb menu / close menu"
-msgstr "Відкрити меню дій / Закрити меню"
+msgstr "Рухатись / Розгледіти / Обрати"
 
 #. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) This action changes the speed of the game (walking, animations, etc.)
 #: engines/sherlock/metaengine.cpp:810
-#, fuzzy
-#| msgid "Change sound"
 msgid "Change speed"
-msgstr "Змінити звук"
+msgstr "Змінити швидкість"
 
 #: engines/sherlock/metaengine.cpp:833
-#, fuzzy
-#| msgid "Show journal"
 msgid "Open journal"
-msgstr "Показати журнал"
+msgstr "Відкрити журнал"
 
-#: engines/sherlock/metaengine.cpp:846
-#, fuzzy
-#| msgid "Open options menu"
-msgid "Open options"
+#: engines/sherlock/metaengine.cpp:846 engines/touche/metaengine.cpp:147
+msgid "Open options menu"
 msgstr "Відкрити меню налаштувань"
 
 #: engines/sherlock/metaengine.cpp:862
-#, fuzzy
-#| msgid "Fit to window"
 msgid "Exit / Close window"
-msgstr "В розміри вікна"
-
-#: engines/sherlock/metaengine.cpp:872
-#, fuzzy
-#| msgid "Skip dialogue"
-msgid "Skip prolog"
-msgstr "Пропустити діалог"
+msgstr "Вийти / Закрити вікно"
 
 #: engines/sherlock/metaengine.cpp:882 engines/sherlock/metaengine.cpp:949
 msgid "Change selected option to the left"
@@ -13502,72 +13469,19 @@ msgstr ""
 msgid "Change selected option to the right"
 msgstr ""
 
-#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go forward 10 pages in the journal
-#: engines/sherlock/metaengine.cpp:895
-#, fuzzy
-#| msgid "Show journal"
-msgid "Go forward 10 pages"
-msgstr "Показати журнал"
-
-#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go forward 1 page in the journal
-#: engines/sherlock/metaengine.cpp:902
-#, fuzzy
-#| msgid "Show journal"
-msgid "Go forward 1 page"
-msgstr "Показати журнал"
-
-#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go back 1 page in the journal
-#: engines/sherlock/metaengine.cpp:917
-#, fuzzy
-#| msgid "Show journal"
-msgid "Go back 1 page"
-msgstr "Показати журнал"
-
-#: engines/sherlock/metaengine.cpp:924
-#, fuzzy
-#| msgid "Go to start of line"
-msgid "Go to start of journal"
-msgstr "Перейти на початок рядку"
-
-#: engines/sherlock/metaengine.cpp:931
-#, fuzzy
-#| msgid "Go to end of line"
-msgid "Go to end of journal"
-msgstr "Перейти на кінець рядку"
-
 #: engines/sherlock/metaengine.cpp:972
-#, fuzzy
-#| msgid "Skip minigame"
 msgid "Skip darts minigame"
-msgstr "Пропустити міні-гру"
+msgstr "Пропустити міні-гру дартс"
 
 #. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a map, this action is used to scroll to the top left of the map
 #: engines/sherlock/metaengine.cpp:983
-#, fuzzy
-#| msgid "Scroll list up"
 msgid "Scroll to top left"
-msgstr "Прокручення списку догори"
+msgstr "Прокрутити до верху-вліво"
 
 #. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a map, this action is used to scroll to the bottom right of the map
 #: engines/sherlock/metaengine.cpp:991
-#, fuzzy
-#| msgid "Move to bottom"
 msgid "Scroll to bottom right"
-msgstr "Рухатись до долу"
-
-#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has multiple widgets for various purposes (eg. inventory, save files, etc.), this action is used to scroll up by a page in the widget
-#: engines/sherlock/metaengine.cpp:1041
-#, fuzzy
-#| msgid "Scroll bar up"
-msgid "Scroll page up"
-msgstr "Прокручення догори"
-
-#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has multiple widgets for various purposes (eg. inventory, save files, etc.), this action is used to scroll down by a page in the widget
-#: engines/sherlock/metaengine.cpp:1048
-#, fuzzy
-#| msgid "Scroll bar down"
-msgid "Scroll page down"
-msgstr "Прокручення донизу"
+msgstr "Прокрутити до низу-направо"
 
 #. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has multiple widgets for various purposes (eg. inventory, save files, etc.), this action is used to scroll to the end of the widget
 #: engines/sherlock/metaengine.cpp:1055
@@ -14028,10 +13942,8 @@ msgid "Perform default action"
 msgstr "Глянути на"
 
 #: engines/supernova/metaengine.cpp:244
-#, fuzzy
-#| msgid "Interpolation:"
 msgid "Instructions"
-msgstr "Інтерполяція:"
+msgstr "Інструкції"
 
 #: engines/supernova/metaengine.cpp:250
 #, fuzzy
@@ -14372,10 +14284,8 @@ msgid "Remote"
 msgstr "Видалити"
 
 #: engines/titanic/metaengine.cpp:254
-#, fuzzy
-#| msgid "Room:"
 msgid "Rooms"
-msgstr "Кімната:"
+msgstr "Кімнати"
 
 #: engines/titanic/metaengine.cpp:259
 msgid "Real life"
@@ -14406,10 +14316,8 @@ msgid "Scroll to bottom"
 msgstr "Рухатись до долу"
 
 #: engines/titanic/metaengine.cpp:291
-#, fuzzy
-#| msgid "Transitions:"
 msgid "Translation"
-msgstr "Переходи:"
+msgstr "Переклад"
 
 #: engines/titanic/metaengine.cpp:307
 msgid "Toggle between Star Map and photo of your home"
@@ -14555,10 +14463,6 @@ msgstr "Головне меню"
 #| msgid "Skip sequence/open quit dialogue"
 msgid "Skip sequence / open quit dialog"
 msgstr "Пропустити відеоряд/відкрити діалог виходу"
-
-#: engines/touche/metaengine.cpp:147
-msgid "Open options menu"
-msgstr "Відкрити меню налаштувань"
 
 #. I18N: The actor walking pace is increased
 #: engines/touche/metaengine.cpp:154
@@ -15021,11 +14925,9 @@ msgid ""
 msgstr "Ви вибрали Ransome *unbeeped* (DLC), але DLC не виявлено!"
 
 #: engines/twp/twp.cpp:1019
-#, fuzzy
-#| msgid "This game requires the FoxTail subengine, which is not compiled in."
 msgid ""
 "This game requires OpenGL with shaders, which is not supported on your system"
-msgstr "Ця гра потребує движка FoxTail, який відсутній у збірці."
+msgstr "Ця гра потребує OpenGL з шейдерами, що не підтримується вашою системою"
 
 #: engines/twp/twp.cpp:1025
 msgid ""
@@ -15311,10 +15213,8 @@ msgid "Open door"
 msgstr "Відкрити голомапу"
 
 #: engines/ultima/ultima4/metaengine.cpp:64
-#, fuzzy
-#| msgid "Password:"
 msgid "Pass"
-msgstr "Пароль:"
+msgstr "Передати"
 
 #: engines/ultima/ultima4/metaengine.cpp:65
 msgid "Peer"
@@ -15333,10 +15233,8 @@ msgid "Ready weapon"
 msgstr "Наступна дія"
 
 #: engines/ultima/ultima4/metaengine.cpp:69
-#, fuzzy
-#| msgid "Status:"
 msgid "Stats"
-msgstr "Стан:"
+msgstr "Статистика"
 
 #: engines/ultima/ultima4/metaengine.cpp:72
 msgid "Wear armor"
@@ -15347,10 +15245,8 @@ msgid "Yell"
 msgstr ""
 
 #: engines/ultima/ultima4/metaengine.cpp:79
-#, fuzzy
-#| msgid "Speed:"
 msgid "Speed up"
-msgstr "Швидкість:"
+msgstr "Пришвидчити"
 
 #: engines/ultima/ultima4/metaengine.cpp:80
 #, fuzzy
@@ -15508,16 +15404,12 @@ msgid "Create transport"
 msgstr "Створення каталогу"
 
 #: engines/ultima/ultima4/metaengine.cpp:121
-#, fuzzy
-#| msgid "Debug level:"
 msgid "Up level"
-msgstr "Рівень відладки:"
+msgstr "На рівень вище"
 
 #: engines/ultima/ultima4/metaengine.cpp:122
-#, fuzzy
-#| msgid "Debug level:"
 msgid "Down level"
-msgstr "Рівень відладки:"
+msgstr "На рівень нижче"
 
 #: engines/ultima/ultima4/metaengine.cpp:123
 msgid "Grant virtue"
@@ -15629,10 +15521,8 @@ msgid "End key"
 msgstr ""
 
 #: engines/ultima/nuvie/metaengine.cpp:84
-#, fuzzy
-#| msgid "Toggle between voice/text/text and voice"
 msgid "Toggle between inventory and actor view"
-msgstr "Перемикання між озвучкою/текстом/текстом і озвучкою"
+msgstr "Перемкнути між переглядом інвентарю та акторів"
 
 #: engines/ultima/nuvie/metaengine.cpp:85
 #, fuzzy
@@ -17120,6 +17010,50 @@ msgid ""
 "solved.  These puzzles may alternatively be solved using subtitles, if "
 "supported. Continue launching game?"
 msgstr ""
+
+#~ msgid "Open verb menu / Close menu"
+#~ msgstr "Відкрити меню дій / Закрити меню"
+
+#, fuzzy
+#~| msgid "Open options menu"
+#~ msgid "Open options"
+#~ msgstr "Відкрити меню налаштувань"
+
+#~ msgid "Skip prolog"
+#~ msgstr "Пропустити вступ"
+
+#, fuzzy
+#~| msgid "Show journal"
+#~ msgid "Go forward 1 page"
+#~ msgstr "Показати журнал"
+
+#, fuzzy
+#~| msgid "Show journal"
+#~ msgid "Go back 1 page"
+#~ msgstr "Показати журнал"
+
+#, fuzzy
+#~| msgid "Go to start of line"
+#~ msgid "Go to start of journal"
+#~ msgstr "Перейти на початок рядку"
+
+#, fuzzy
+#~| msgid "Go to end of line"
+#~ msgid "Go to end of journal"
+#~ msgstr "Перейти на кінець рядку"
+
+#, fuzzy
+#~| msgid "Scroll bar up"
+#~ msgid "Scroll page up"
+#~ msgstr "Прокручення догори"
+
+#, fuzzy
+#~| msgid "Scroll bar down"
+#~ msgid "Scroll page down"
+#~ msgstr "Прокручення донизу"
+
+#~ msgid "Exit game"
+#~ msgstr "Вийти з гри"
 
 #~ msgid "Ok"
 #~ msgstr "Гаразд"

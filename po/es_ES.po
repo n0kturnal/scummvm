@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ScummVM 1.4.0svn\n"
 "Report-Msgid-Bugs-To: scummvm-devel@lists.scummvm.org\n"
-"POT-Creation-Date: 2026-01-17 20:38+0000\n"
-"PO-Revision-Date: 2026-01-10 20:50+0000\n"
+"POT-Creation-Date: 2026-01-20 23:50+0000\n"
+"PO-Revision-Date: 2026-01-17 21:16+0000\n"
 "Last-Translator: IlDucci <pajaroloco_2@hotmail.com>\n"
 "Language-Team: Spanish <https://translations.scummvm.org/projects/scummvm/"
 "scummvm/es/>\n"
@@ -1666,12 +1666,12 @@ msgid "Unknown Year"
 msgstr "Año desconocido"
 
 #: gui/launcher.cpp:1434 gui/launcher.cpp:1810
-#, fuzzy
-#| msgid "Do you really want to remove this game configuration?"
 msgid ""
 "Do you really want to remove the following game configurations?\n"
 "\n"
-msgstr "¿Seguro que quieres eliminar la configuración de este juego?"
+msgstr ""
+"¿Seguro que quieres eliminar las configuraciones de estos juegos?\n"
+"\n"
 
 #. I18N: Group for All items
 #: gui/launcher.cpp:1615 gui/widgets/groupedlist.cpp:81
@@ -4158,11 +4158,11 @@ msgstr "Iniciando el emulador de MT-32"
 msgid "MT-32 emulator"
 msgstr "Emulación de MT-32"
 
-#: audio/softsynth/pcspk.cpp:254
+#: audio/softsynth/pcspk.cpp:250
 msgid "PC Speaker emulator"
 msgstr "Emulación del altavoz de PC"
 
-#: audio/softsynth/pcspk.cpp:273
+#: audio/softsynth/pcspk.cpp:269
 msgid "IBM PCjr emulator"
 msgstr "Emulación de IBM PCjr"
 
@@ -7817,14 +7817,16 @@ msgstr "Base de datos de pistas"
 #. In Blade Runner's official localizations, there is a description of this keymap
 #. on the KIA Help Page, under Keyboard Shortcuts. In the English version it is
 #. QUIT GAME
-#: engines/bladerunner/metaengine.cpp:375 engines/darkseed/metaengine.cpp:60
-#: engines/dragons/metaengine.cpp:223 engines/efh/metaengine.cpp:373
-#: engines/efh/metaengine.cpp:619 engines/freescape/games/castle/castle.cpp:273
+#: engines/bladerunner/metaengine.cpp:375 engines/cruise/metaengine.cpp:229
+#: engines/darkseed/metaengine.cpp:60 engines/dragons/metaengine.cpp:223
+#: engines/efh/metaengine.cpp:373 engines/efh/metaengine.cpp:619
+#: engines/freescape/games/castle/castle.cpp:273
 #: engines/freescape/games/dark/dark.cpp:197
 #: engines/freescape/games/driller/driller.cpp:130
 #: engines/freescape/games/eclipse/eclipse.cpp:237
-#: engines/saga/metaengine.cpp:437 engines/sherlock/metaengine.cpp:359
-#: engines/sherlock/metaengine.cpp:618 engines/sherlock/metaengine.cpp:852
+#: engines/mads/metaengine.cpp:361 engines/saga/metaengine.cpp:437
+#: engines/sherlock/metaengine.cpp:359 engines/sherlock/metaengine.cpp:618
+#: engines/sherlock/metaengine.cpp:852 engines/stark/metaengine.cpp:280
 #: engines/sword1/metaengine.cpp:295 engines/trecision/metaengine.cpp:156
 #: engines/tsage/metaengine.cpp:231 engines/vcruise/metaengine.cpp:190
 msgid "Quit game"
@@ -8158,7 +8160,7 @@ msgstr "Salir de la introducción de Sony"
 msgid "Select option / Click in game"
 msgstr "Seleccionar opción/Clic dentro del juego"
 
-#: engines/cine/metaengine.cpp:302
+#: engines/cine/metaengine.cpp:302 engines/sherlock/metaengine.cpp:799
 msgid "Open action menu / Close menu"
 msgstr "Abrir menú de acciones/Cerrar menú"
 
@@ -8267,7 +8269,10 @@ msgid "Reply 6"
 msgstr "Respuesta 6"
 
 #. I18N: (Game: The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel) The game has an inventory, this action is go ahead a page (one page displays 6 items) in the inventory
+#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go forward 1 page in the journal
+#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has multiple widgets for various purposes (eg. inventory, save files, etc.), this action is used to scroll down by a page in the widget
 #: engines/crab/input/input.cpp:221 engines/sherlock/metaengine.cpp:591
+#: engines/sherlock/metaengine.cpp:902 engines/sherlock/metaengine.cpp:1048
 #: engines/twine/metaengine.cpp:460 engines/wintermute/keymapper_tables.h:190
 #: engines/wintermute/keymapper_tables.h:207
 #: engines/wintermute/keymapper_tables.h:638
@@ -8279,7 +8284,10 @@ msgid "Next page"
 msgstr "Página siguiente"
 
 #. I18N: (Game: The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel) The game has an inventory, this action is go back a page (one page displays 6 items) in the inventory
+#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go back 1 page in the journal
+#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has multiple widgets for various purposes (eg. inventory, save files, etc.), this action is used to scroll up by a page in the widget
 #: engines/crab/input/input.cpp:226 engines/sherlock/metaengine.cpp:572
+#: engines/sherlock/metaengine.cpp:917 engines/sherlock/metaengine.cpp:1041
 #: engines/wintermute/keymapper_tables.h:183
 #: engines/wintermute/keymapper_tables.h:199
 #: engines/wintermute/keymapper_tables.h:630
@@ -8319,11 +8327,6 @@ msgstr "Aumentar velocidad del juego"
 #: engines/cruise/metaengine.cpp:211
 msgid "Decrease game speed"
 msgstr "Disminuir velocidad del juego"
-
-#: engines/cruise/metaengine.cpp:229 engines/mads/metaengine.cpp:361
-#: engines/stark/metaengine.cpp:280
-msgid "Exit game"
-msgstr "Salir del juego"
 
 #: engines/cryomni3d/metaengine.cpp:143
 msgid "Versailles 1685 support is not compiled in"
@@ -9628,14 +9631,12 @@ msgid "Glowstick"
 msgstr "Bengala"
 
 #: engines/hugo/metaengine.cpp:45
-#, fuzzy
-#| msgid "Easy mouse interface"
 msgid "Use Windows interface"
-msgstr "Interfaz de ratón sencilla"
+msgstr "Interfaz de Windows"
 
 #: engines/hugo/metaengine.cpp:46
 msgid "Use mouse and toolbar from Windows version"
-msgstr ""
+msgstr "Muestra el ratón y la barra de herramientas de la versión para Windows"
 
 #: engines/hugo/metaengine.cpp:148
 msgid "User help"
@@ -9773,8 +9774,9 @@ msgid "Secondary shoot"
 msgstr "Disparo secundario"
 
 #: engines/hypno/metaengine.cpp:146 engines/lab/metaengine.cpp:209
-#: engines/ngi/metaengine.cpp:168 engines/teenagent/metaengine.cpp:232
-#: engines/toon/metaengine.cpp:98 engines/voyeur/metaengine.cpp:235
+#: engines/ngi/metaengine.cpp:168 engines/sherlock/metaengine.cpp:872
+#: engines/teenagent/metaengine.cpp:232 engines/toon/metaengine.cpp:98
+#: engines/voyeur/metaengine.cpp:235
 msgid "Skip intro"
 msgstr "Omitir introducción"
 
@@ -10006,24 +10008,31 @@ msgid ""
 "- Correct projectile weapon damage (per AD&D 2nd Edition rules)\n"
 "- Elves get +1 to hit with swords and bows (per official game manual)"
 msgstr ""
+"- Elimina los errores de redondeo al aumentar PS\n"
+"- Corrige los daños de las armas que lanzan proyectiles (según las reglas de "
+"la 2.ª edición de AD&D)\n"
+"- Los elfos ganan +1 de daño con espadas y arcos (según el manual oficial "
+"del juego)"
 
 #: engines/kyra/metaengine.cpp:175
 msgid "Fix Ileria and Beohram NPCs"
-msgstr ""
+msgstr "Corregir NPC de Ileria y Beohram"
 
 #: engines/kyra/metaengine.cpp:176
 msgid "Make Ileria a female and Beohram a paladin"
-msgstr ""
+msgstr "Trata a Ileria como a una mujer y a Behoram un paladín"
 
 #: engines/kyra/metaengine.cpp:187
 msgid "Enhanced thrown weapon reload"
-msgstr ""
+msgstr "Mejorar recarga de armas arrojadizas"
 
 #: engines/kyra/metaengine.cpp:188
 msgid ""
 "Thrown weapons (daggers, darts, spears...) get replaced from belt and "
 "backpack inventory slots, with thrown weapons only"
 msgstr ""
+"Las armas arrojadizas (dagas, dardos, arpones...) son sustituidas de los "
+"espacios de inventario de cinturón y mochila con otras armas arrojadizas"
 
 #: engines/kyra/metaengine.cpp:279
 msgid "Lands of Lore support is not compiled in"
@@ -13524,18 +13533,19 @@ msgid "Go back 10 pages"
 msgstr "Retroceder 10 páginas"
 
 #. I18N: (Game: The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel) The game has a journal, this action is used to go forward 10 pages in the journal
-#: engines/sherlock/metaengine.cpp:507
-msgid "Go ahead 10 pages"
+#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go forward 10 pages in the journal
+#: engines/sherlock/metaengine.cpp:507 engines/sherlock/metaengine.cpp:895
+msgid "Go forward 10 pages"
 msgstr "Avanzar 10 páginas"
 
 #. I18N: (Game: The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel) The game has a journal, this action is used to go to the first page of the journal
-#: engines/sherlock/metaengine.cpp:521
+#: engines/sherlock/metaengine.cpp:521 engines/sherlock/metaengine.cpp:924
 #: engines/wintermute/keymapper_tables.h:965
 msgid "First page"
 msgstr "Primera página"
 
 #. I18N: (Game: The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel) The game has a journal, this action is used to go to the last page of the journal
-#: engines/sherlock/metaengine.cpp:528
+#: engines/sherlock/metaengine.cpp:528 engines/sherlock/metaengine.cpp:931
 #: engines/wintermute/keymapper_tables.h:970
 msgid "Last page"
 msgstr "Última página"
@@ -13632,10 +13642,6 @@ msgstr "Asignaciones de opciones de conversación"
 msgid "Move / Examine / Select"
 msgstr "Mover/Examinar/Seleccionar"
 
-#: engines/sherlock/metaengine.cpp:799
-msgid "Open verb menu / close menu"
-msgstr "Abrir/Cerrar menú de verbos"
-
 #. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) This action changes the speed of the game (walking, animations, etc.)
 #: engines/sherlock/metaengine.cpp:810
 msgid "Change speed"
@@ -13645,17 +13651,13 @@ msgstr "Cambiar velocidad"
 msgid "Open journal"
 msgstr "Abrir diario"
 
-#: engines/sherlock/metaengine.cpp:846
-msgid "Open options"
-msgstr "Abrir opciones"
+#: engines/sherlock/metaengine.cpp:846 engines/touche/metaengine.cpp:147
+msgid "Open options menu"
+msgstr "Abrir menú de opciones"
 
 #: engines/sherlock/metaengine.cpp:862
 msgid "Exit / Close window"
 msgstr "Salir/Cerrar ventana"
-
-#: engines/sherlock/metaengine.cpp:872
-msgid "Skip prolog"
-msgstr "Omitir prólogo"
 
 #: engines/sherlock/metaengine.cpp:882 engines/sherlock/metaengine.cpp:949
 msgid "Change selected option to the left"
@@ -13664,29 +13666,6 @@ msgstr "Cambiar opción selecc. a la izda."
 #: engines/sherlock/metaengine.cpp:888 engines/sherlock/metaengine.cpp:955
 msgid "Change selected option to the right"
 msgstr "Cambiar opción selecc. a la dcha."
-
-#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go forward 10 pages in the journal
-#: engines/sherlock/metaengine.cpp:895
-msgid "Go forward 10 pages"
-msgstr "Avanzar 10 páginas"
-
-#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go forward 1 page in the journal
-#: engines/sherlock/metaengine.cpp:902
-msgid "Go forward 1 page"
-msgstr "Avanzar una página"
-
-#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has a journal, this action is used to go back 1 page in the journal
-#: engines/sherlock/metaengine.cpp:917
-msgid "Go back 1 page"
-msgstr "Retroceder una página"
-
-#: engines/sherlock/metaengine.cpp:924
-msgid "Go to start of journal"
-msgstr "Ir al principio del diario"
-
-#: engines/sherlock/metaengine.cpp:931
-msgid "Go to end of journal"
-msgstr "Ir al final del diario"
 
 #: engines/sherlock/metaengine.cpp:972
 msgid "Skip darts minigame"
@@ -13701,16 +13680,6 @@ msgstr "Ir a parte superior"
 #: engines/sherlock/metaengine.cpp:991
 msgid "Scroll to bottom right"
 msgstr "Ir a parte inferior dcha."
-
-#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has multiple widgets for various purposes (eg. inventory, save files, etc.), this action is used to scroll up by a page in the widget
-#: engines/sherlock/metaengine.cpp:1041
-msgid "Scroll page up"
-msgstr "Desplazar hacia arriba"
-
-#. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has multiple widgets for various purposes (eg. inventory, save files, etc.), this action is used to scroll down by a page in the widget
-#: engines/sherlock/metaengine.cpp:1048
-msgid "Scroll page down"
-msgstr "Desplazar hacia abajo"
 
 #. I18N: (Game name: The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo) The game has multiple widgets for various purposes (eg. inventory, save files, etc.), this action is used to scroll to the end of the widget
 #: engines/sherlock/metaengine.cpp:1055
@@ -14542,10 +14511,6 @@ msgstr "Menú principal/Salir"
 msgid "Skip sequence / open quit dialog"
 msgstr "Omitir secuencia/abrir ventana de salida"
 
-#: engines/touche/metaengine.cpp:147
-msgid "Open options menu"
-msgstr "Abrir menú de opciones"
-
 #. I18N: The actor walking pace is increased
 #: engines/touche/metaengine.cpp:154
 msgid "Enable fast walk"
@@ -15042,71 +15007,59 @@ msgstr "No se ha encontrado el archivo de datos ultima.dat correcto"
 
 #: engines/ultima/ultima0/metaengine.cpp:49
 msgid "Swing"
-msgstr ""
+msgstr "Golpear"
 
 #: engines/ultima/ultima0/metaengine.cpp:50
 msgid "Throw"
-msgstr ""
+msgstr "Lanzar"
 
 #: engines/ultima/ultima0/metaengine.cpp:51
 msgid "Food"
-msgstr ""
+msgstr "Comida"
 
 #: engines/ultima/ultima0/metaengine.cpp:52
 msgid "Rapier"
-msgstr ""
+msgstr "Estoque"
 
 #: engines/ultima/ultima0/metaengine.cpp:53
 msgid "Axe"
-msgstr ""
+msgstr "Hacha"
 
 #: engines/ultima/ultima0/metaengine.cpp:54
 msgid "Shield"
-msgstr ""
+msgstr "Escudo"
 
 #: engines/ultima/ultima0/metaengine.cpp:55
 msgid "Bow & Arrow"
-msgstr ""
+msgstr "Arco"
 
 #: engines/ultima/ultima0/metaengine.cpp:56
 msgid "Magic Amulet"
-msgstr ""
+msgstr "Amuleto mágico"
 
 #: engines/ultima/ultima0/metaengine.cpp:57
-#, fuzzy
-#| msgid "Select option 1"
 msgid "Amulet Option 1"
-msgstr "Seleccionar opción 1"
+msgstr "Opción de amuleto 1"
 
 #: engines/ultima/ultima0/metaengine.cpp:58
-#, fuzzy
-#| msgid "Select option 2"
 msgid "Amulet Option 2"
-msgstr "Seleccionar opción 2"
+msgstr "Opción de amuleto 2"
 
 #: engines/ultima/ultima0/metaengine.cpp:59
-#, fuzzy
-#| msgid "Select option 3"
 msgid "Amulet Option 3"
-msgstr "Seleccionar opción 3"
+msgstr "Opción de amuleto 3"
 
 #: engines/ultima/ultima0/metaengine.cpp:60
-#, fuzzy
-#| msgid "Select option 4"
 msgid "Amulet Option 4"
-msgstr "Seleccionar opción 4"
+msgstr "Opción de amuleto 4"
 
 #: engines/ultima/ultima0/metaengine.cpp:65
-#, fuzzy
-#| msgid "Crawl North"
 msgid "North"
-msgstr "Arrastrarse hacia el norte"
+msgstr "Norte"
 
 #: engines/ultima/ultima0/metaengine.cpp:66
-#, fuzzy
-#| msgid "Crawl South"
 msgid "South"
-msgstr "Arrastrarse hacia el sur"
+msgstr "Sur"
 
 #: engines/ultima/ultima0/metaengine.cpp:67
 msgid "West"
@@ -15118,34 +15071,26 @@ msgstr "Este"
 
 #: engines/ultima/ultima0/metaengine.cpp:69
 #: engines/ultima/ultima0/metaengine.cpp:83
-#, fuzzy
-#| msgid "Enter Text"
 msgid "Enter/Exit"
-msgstr "Introducir texto"
+msgstr "Entrar/Salir"
 
 #: engines/ultima/ultima0/metaengine.cpp:72
 #: engines/ultima/ultima0/metaengine.cpp:86
-#, fuzzy
-#| msgid "Wait"
 msgid "Pass/Wait"
-msgstr "Esperar"
+msgstr "Pasar/Esperar"
 
 #: engines/ultima/ultima0/metaengine.cpp:73
 #: engines/ultima/ultima0/metaengine.cpp:87
-#, fuzzy
-#| msgid "Minimize"
 msgid "Minimap"
-msgstr "Minimizar"
+msgstr "Minimapa"
 
 #: engines/ultima/ultima0/metaengine.cpp:78
 msgid "Move Forward"
 msgstr "Avanzar"
 
 #: engines/ultima/ultima0/metaengine.cpp:79
-#, fuzzy
-#| msgid "Turn on"
 msgid "Turn Around"
-msgstr "Encender"
+msgstr "Giro de 180°"
 
 #: engines/ultima/ultima0/metaengine.cpp:80
 msgid "Turn Left"
@@ -15160,29 +15105,23 @@ msgstr "Girar a la derecha"
 #: engines/ultima/ultima0/metaengine.cpp:111
 #: engines/ultima/ultima0/metaengine.cpp:117
 #: engines/ultima/ultima0/metaengine.cpp:123
-#, fuzzy
-#| msgid "Bind Keys"
 msgid "Basic Keys"
-msgstr "Asignar teclas"
+msgstr "Teclas básicas"
 
 #: engines/ultima/ultima0/metaengine.cpp:99
 #: engines/ultima/ultima0/metaengine.cpp:112
-#, fuzzy
-#| msgid "Game Keys"
 msgid "Menu Keys"
-msgstr "Teclas del juego"
+msgstr "Teclas de menús"
 
 #: engines/ultima/ultima0/metaengine.cpp:100
 #: engines/ultima/ultima0/metaengine.cpp:118
-#, fuzzy
-#| msgid "General Keys"
 msgid "Overworld Keys"
-msgstr "Teclas comunes"
+msgstr "Teclas en superficie"
 
 #: engines/ultima/ultima0/metaengine.cpp:101
 #: engines/ultima/ultima0/metaengine.cpp:124
 msgid "Dungeon Keys"
-msgstr ""
+msgstr "Teclas en mazmorras"
 
 #: engines/ultima/ultima4/metaengine.cpp:43
 #: engines/ultima/ultima4/metaengine.cpp:130
@@ -16217,22 +16156,23 @@ msgstr ""
 "2D"
 
 #: engines/wintermute/metaengine.cpp:94
-#, fuzzy
-#| msgid "Use English speech"
 msgid "Use Italian speech pack"
-msgstr "Usar voces en inglés"
+msgstr "Usar pack de voces en italiano"
 
 #: engines/wintermute/metaengine.cpp:95
 msgid "Use Italian dubbing instead of the default English one"
 msgstr ""
+"Utiliza el doblaje al italiano en vez del doblaje predeterminado en inglés"
 
 #: engines/wintermute/metaengine.cpp:106
 msgid "Run SD version (1280x800)"
-msgstr ""
+msgstr "Ejecutar versión en SD (1280x800)"
 
 #: engines/wintermute/metaengine.cpp:107
 msgid "Run the legacy SD version, which is better for small screens"
 msgstr ""
+"Ejecuta la versión antigua en resolución estándar, más apta para pantallas "
+"pequeñas"
 
 #: engines/wintermute/metaengine.cpp:148
 msgid "FoxTail support is not compiled in"
@@ -16861,6 +16801,41 @@ msgstr ""
 "que es imprescindible tener audio en MIDI para poder resolverlos.  También "
 "se podrían resolver estos acertijos con subtítulos, si están disponibles. "
 "¿Quieres seguir ejecutando el juego?"
+
+#, fuzzy
+#~| msgid "Open verb menu / close menu"
+#~ msgid "Open verb menu / Close menu"
+#~ msgstr "Abrir/Cerrar menú de verbos"
+
+#~ msgid "Open options"
+#~ msgstr "Abrir opciones"
+
+#~ msgid "Skip prolog"
+#~ msgstr "Omitir prólogo"
+
+#~ msgid "Go forward 1 page"
+#~ msgstr "Avanzar una página"
+
+#~ msgid "Go back 1 page"
+#~ msgstr "Retroceder una página"
+
+#~ msgid "Go to start of journal"
+#~ msgstr "Ir al principio del diario"
+
+#~ msgid "Go to end of journal"
+#~ msgstr "Ir al final del diario"
+
+#~ msgid "Scroll page up"
+#~ msgstr "Desplazar hacia arriba"
+
+#~ msgid "Scroll page down"
+#~ msgstr "Desplazar hacia abajo"
+
+#~ msgid "Exit game"
+#~ msgstr "Salir del juego"
+
+#~ msgid "Go ahead 10 pages"
+#~ msgstr "Avanzar 10 páginas"
 
 #~ msgid "Ok"
 #~ msgstr "Aceptar"
