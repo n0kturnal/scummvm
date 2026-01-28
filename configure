@@ -1477,8 +1477,8 @@ for ac_option in $@; do
 		;;
 	--with-fmlib-prefix=*)
 		arg=`echo $ac_option | cut -d '=' -f 2`
-		FMLIB_CFLAGS="-I$arg/include"
-		FMLIB_LIBS="-L$arg/lib/aout/stdlib/Final/020-60"
+		FMLIB_CFLAGS="-I$arg/include -I$arg/include/platform/atari"
+		FMLIB_LIBS="-L$arg/lib"
 		;;
 	--with-flac-prefix=*)
 		arg=`echo $ac_option | cut -d '=' -f 2`
@@ -5517,7 +5517,6 @@ if test "$_fmlib" = auto ; then
 	_fmlib=no
 	cat > $TMPC << EOF
 
-#include "fm/fm_defs.h"
 #include "fmcore.h"
 #include "fmutil.h"
 
@@ -5546,11 +5545,9 @@ int main(void)
    gOplIf = fmCreateInterface(ifCfg); 
 
    int32_t retval = fmInit(&gOplIf, &params); 
-   const bool isOk = (retval >= 0);
 
-   if(isOK)
+   if(retval >= 0)
    {
-	
 	(void)fmDeinit(&gOplIf, &params);
     return 0;
    }	
@@ -5558,12 +5555,12 @@ int main(void)
   return -1;
  }
 EOF
-	cc_check $FMLIB_CFLAGS $FMLIB_LIBS -lfmCore -lfmUtil -loplCommon -lnokturnfmDriver -lopl3DuoDriver -lopl3ExpressDriver -loplxlptDriver -lsystemCore && \
+	cc_check $FMLIB_CFLAGS $FMLIB_LIBS -lfmCore -lfmUtil -loplCommon -lnokturnfmDriver -lopl3DuoDriver -lopl3ExpressDriver -loplxlptDriver -lopl3NullDriver -laudioBackend -lsystemCore -lcontainers -lallocators && \
 	_fmlib=yes
 fi
 if test "$_fmlib" = yes; then
-	append_var DEFINES "-DFMLIB_OPL_SHADOW_REG_WRITE_ENABLE=1 -DFMLIB_ENABLE_DRIVER_NOKTURNFM=1 -DFMLIB_ENABLE_DRIVER_RW_OPL3_EXPRESS=1 -DFMLIB_ENABLE_DRIVER_OPLXLPT=1 -DFMLIB_ENABLE_DRIVER_OPL3DUO=1 -DCORE_ENABLE_MALLOC=0"
-	append_var LIBS "$FMLIB_LIBS -lfmCore -lfmUtil -loplCommon -lnokturnfmDriver -lopl3DuoDriver -lopl3ExpressDriver -loplxlptDriver -lsystemCore"
+	append_var DEFINES "-DSC_PLATFORM_ATARI=1 -DFMLIB_OPL_SHADOW_REG_WRITE_ENABLE=1 -DCORE_ENABLE_MALLOC=0"
+	append_var LIBS "$FMLIB_LIBS -lfmCore -lfmUtil -loplCommon -lnokturnfmDriver -lopl3DuoDriver -lopl3ExpressDriver -loplxlptDriver -lopl3NullDriver -laudioBackend -lsystemCore -lcontainers -lallocators"
 	append_var INCLUDES "$FMLIB_CFLAGS"
 fi
 define_in_config_if_yes "$_fmlib" 'USE_FMLIB'

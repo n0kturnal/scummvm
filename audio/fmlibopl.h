@@ -41,7 +41,6 @@
 
 extern "C"
 {
-#include "fm/fm_defs.h"
 #include "fmcore.h"
 #include "fmutil.h"
 }
@@ -59,6 +58,7 @@ namespace OPL
 			dtOPL3LPT,
 			dtOPL2AudioBoard,
 			dtOPL3Duo,
+			dtNatfeatsOpl,
 			dtNumDevices
 		};
 

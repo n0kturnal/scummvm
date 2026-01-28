@@ -83,7 +83,8 @@ enum OplEmulator {
 	kFMlibOPL2LPT = 11,
 	kFMlibOPL3LPT = 12,
 	kFMlibCEOPL2AudioBoard = 13,
-	kFMlibCEOPL3Duo = 14
+	kFMlibCEOPL3Duo = 14,
+	kFMlibNullNatfeats = 15,
 #endif	
 };
 
@@ -124,6 +125,7 @@ const Config::EmulatorDescription Config::_drivers[] = {
 	{"fmlib_opl3lpt", _s("Serdaco OPL3LPT (OPL3)"), kFMlibOPL3LPT, kFlagOpl2 | kFlagDualOpl2 | kFlagOpl3},
 	{"fmlib_ce_opl2ab", _s("Cheerful Electronics OPL2 Audio Board (OPL2)"), kFMlibCEOPL2AudioBoard, kFlagOpl2 },
 	{"fmlib_ce_opl3duo", _s("Cheerful Electronics OPL3 Duo! (2xOPL3)"), kFMlibCEOPL3Duo, kFlagOpl2 | kFlagDualOpl2 | kFlagOpl3},
+	{"fmlib_null_natfeats", _s("NATFEATS/NULL OPL"), kFMlibNullNatfeats, kFlagOpl2 | kFlagDualOpl2 | kFlagOpl3},
 #endif	
 	{ nullptr, nullptr, 0, 0 }
 };
@@ -310,6 +312,9 @@ OPL *Config::create(DriverId driver, OplType type) {
 
 	case kFMlibCEOPL3Duo:
 		return FMlibOPL::create(type, FMlibOPL::dtOPL3Duo);
+
+	case kFMlibNullNatfeats:
+		return FMlibOPL::create(type, FMlibOPL::dtNatfeatsOpl);
 #endif
 
 	default:

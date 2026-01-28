@@ -38,8 +38,8 @@
 
 extern "C"
 {
-#include "platform/atari/hwinfo.h"	
-#include "core/user_memory.h"
+#include "hwinfo.h"	
+#include "user_memory.h"
 #include "oplShadowRegs.h"
 }
 
@@ -124,6 +124,7 @@ static const char *s_DebugConfigMsgStrs[FMlibOPL::dtNumDevices]=
 	"Configuring Serdaco OPL3LPT",
 	"Configuring CE OPL2 Audio Board",
 	"Configuring CE OPL3 Duo!",
+	"Configuring NATFEATS/NULL OPL driver",
 };
 #endif
 
@@ -239,6 +240,13 @@ static const char *s_DebugConfigMsgStrs[FMlibOPL::dtNumDevices]=
 					_params.uParam.outputPort = OPT_LPT_SPI;
 					_params.uCeAudioBoardSettings.isOpl2AudioBoard = false;
 					_ifaceCfg.deviceType = eFmDriverType::FMD_CE_OPL3DUO_LPT_SPI;
+					_ifaceCfg.soundchip = CM_OPL3;
+        			_ifaceCfg.setup = CC_SINGLE;
+				} break;
+				case dtNatfeatsOpl:
+				{
+					_params.uParam.outputPort = OPT_INTERNAL;
+					_ifaceCfg.deviceType = eFmDriverType::FMD_NULL;
 					_ifaceCfg.soundchip = CM_OPL3;
         			_ifaceCfg.setup = CC_SINGLE;
 				} break;
@@ -424,6 +432,7 @@ static const char *s_DebugOplWriteStrs[FMlibOPL::dtNumDevices]=
 	"FMlibOPL OPL3LPT writeReg",
 	"FMlibOPL OPL2AudioBoard writeReg",
 	"FMlibOPL OPL3Duo writeReg",
+	"FMlibOPL NATFEATS / NULL writeReg",
 };
 #endif
 
